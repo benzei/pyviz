@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8"/>
+  <title>
+   Tutorial — PyViz 0.9.7 documentation
+  </title>
+  <meta content="How to solve visualization problems with Python tools." name="description"/>
+  <meta content="PyViz authors" name="author"/>
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js">
+  </script>
+  <script>
+   WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="../_static/site.css" rel="stylesheet"/>
+  <link href="../_static/nbsite.css" rel="stylesheet"/>
+  <!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+  </script>
+  <script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+  </script>
+  <script src="../_static/js/main.js">
+  </script>
+  <script src="../_static/nbsite.js">
+  </script>
+  <script src="../_static/require.js">
+  </script>
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="../_static/favicon.ico" rel="icon" type="image/png"/>
+  <!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="/tutorial/index.html" rel="canonical"/>
+ </head>
+ <body class="">
+  <header class="navigation">
+   <div class="wrapper">
+    <a class="logo" href="../index.html">
+     <img alt="Logo" src="../_static/pyviz-logo.png"/>
+    </a>
+    <a class="navigation-menu logo-text" href="../index.html">
+     <b>
+      <span style="color:#4792cf;">
+       Py
+      </span>
+      <span style="color:#fdca48;">
+       Viz
+      </span>
+     </b>
+    </a>
+    <a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">
+     Menu
+    </a>
+    <nav>
+     <ul class="navigation-menu show" id="js-navigation-menu">
+      <li class="nav-link">
+       <a href="../installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="#">
+        Tutorial
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="../FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="nav-link">
+       <a href="../about.html">
+        About
+       </a>
+      </li>
+      <li class="nav-link">
+       <div style="display:inline-block;vertical-align: middle;">
+        <div class="search-bar">
+         <form action="../search.html" method="get" role="search">
+          <input name="q" placeholder="Search" type="search"/>
+          <button type="submit">
+           <img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+          </button>
+         </form>
+        </div>
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+  <div class="docs section">
+   <div id="hacketyhackhack">
+    <!-- style="width:20%;margin-right: 100px;"> -->
+    <!--style="display: none;"> style="display:none;"> -->
+    <div class="toc" style="width:15%; margin-right:20px;">
+     <ul class="current">
+      <li class="toctree-l1">
+       <a class="reference internal" href="../index.html">
+        Introduction
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../installation.html">
+        Installation
+       </a>
+      </li>
+      <li class="toctree-l1 current">
+       <a class="current reference internal" href="#">
+        Tutorial
+       </a>
+       <ul>
+        <li class="toctree-l2">
+         <a class="reference internal" href="00_Welcome.html">
+          00 Welcome
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="01_Workflow_Introduction.html">
+          01 Workflow Introduction
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="02_Annotating_Data.html">
+          02 Annotating Data
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="03_Customizing_Visual_Appearance.html">
+          03 Customizing Visual Appearance
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="04_Working_with_Datasets.html">
+          04 Working with Datasets
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="05_Working_with_Gridded_Data.html">
+          05 Working with Gridded Data
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="06_Network_Graphs.html">
+          06 Network Graphs
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="07_Geographic_Data.html">
+          07 Geographic Data
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="08_Custom_Interactivity.html">
+          08 Custom Interactivity
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="09_Operations_and_Pipelines.html">
+          09 Operations and Pipelines
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="10_Working_with_Large_Datasets.html">
+          10 Working with Large Datasets
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="11_Streaming_Data.html">
+          11 Streaming Data
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="12_Parameters_and_Widgets.html">
+          12 Parameters and Widgets
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="13_Deploying_Bokeh_Apps.html">
+          13 Deploying Bokeh Apps
+         </a>
+        </li>
+        <li class="toctree-l2">
+         <a class="reference internal" href="A1_Exploration_with_Containers.html">
+          Appendix 1 Exploration with Containers
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../FAQ.html">
+        FAQ
+       </a>
+      </li>
+      <li class="toctree-l1">
+       <a class="reference internal" href="../about.html">
+        About
+       </a>
+      </li>
+     </ul>
+    </div>
+   </div>
+   <div class="content">
+    <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+    <div class="section" id="tutorial">
+     <h1>
+      Tutorial
+      <a class="headerlink" href="#tutorial" title="Permalink to this headline">
+       ¶
+      </a>
+     </h1>
+     <p>
+      This tutorial will take you through all of the steps involved in
+exploring data of many different types and sizes, building simple and
+complex figures, working with billions of data points, adding
+interactive behavior, widgets and controls, and deploying full
+dashboards and applications.
+     </p>
+     <p>
+      Sections 00-13 of this tutorial have been given as a 1-day course led
+by trained instructors.  For self-paced usage, you should expect this
+material to take between 1 and 3 days if you do all of it.  Sections
+0, 1, 2, 3, and 4 contain the most crucial and basic introductory
+material, and should take a couple of hours of study.  All later sections
+can be studied as needed or skipped if not relevant.
+     </p>
+     <p>
+      Section
+      <a class="reference external" href="00_Welcome.html">
+       00 Welcome
+      </a>
+      provides an overview of each of the
+other sections involved, so please see that for more details or to get
+started.
+     </p>
+     <div class="toctree-wrapper compound">
+      <ul>
+       <li class="toctree-l1">
+        <a class="reference internal" href="00_Welcome.html">
+         00 Welcome
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="01_Workflow_Introduction.html">
+         01 Workflow Introduction
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="02_Annotating_Data.html">
+         02 Annotating Data
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="03_Customizing_Visual_Appearance.html">
+         03 Customizing Visual Appearance
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="04_Working_with_Datasets.html">
+         04 Working with Datasets
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="05_Working_with_Gridded_Data.html">
+         05 Working with Gridded Data
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="06_Network_Graphs.html">
+         06 Network Graphs
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="07_Geographic_Data.html">
+         07 Geographic Data
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="08_Custom_Interactivity.html">
+         08 Custom Interactivity
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="09_Operations_and_Pipelines.html">
+         09 Operations and Pipelines
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="10_Working_with_Large_Datasets.html">
+         10 Working with Large Datasets
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="11_Streaming_Data.html">
+         11 Streaming Data
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="12_Parameters_and_Widgets.html">
+         12 Parameters and Widgets
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="13_Deploying_Bokeh_Apps.html">
+         13 Deploying Bokeh Apps
+        </a>
+       </li>
+       <li class="toctree-l1">
+        <a class="reference internal" href="A1_Exploration_with_Containers.html">
+         Appendix 1 Exploration with Containers
+        </a>
+       </li>
+      </ul>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- END MAIN BODY OF DOCS ––––––––––––– -->
+  <footer class="footer">
+   <div class="footer-links">
+    <ul>
+     <li>
+      <span class="footer-title">
+       Links
+      </span>
+     </li>
+     <li>
+      <a href="../installation.html">
+       Installation
+      </a>
+     </li>
+     <li>
+      <a href="#">
+       Tutorial
+      </a>
+     </li>
+     <li>
+      <a href="../FAQ.html">
+       FAQ
+      </a>
+     </li>
+     <li>
+      <a href="../about.html">
+       About
+      </a>
+     </li>
+    </ul>
+    <ul>
+     <li>
+      <span class="footer-title">
+       Join Us
+      </span>
+     </li>
+     <li>
+      <a href="//gitter.im/ioam/holoviews">
+       Gitter
+      </a>
+     </li>
+     <li>
+      <a href="//github.com/pyviz/pyviz">
+       Github
+      </a>
+     </li>
+    </ul>
+    <ul class="copyright">
+     <li>
+      © 2017-2018, PyViz authors
+     </li>
+    </ul>
+   </div>
+  </footer>
+  <!-- Google Analytics -->
+  <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- MathJax Config -->
+  <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+  </script>
+  <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+ </body>
+</html>
